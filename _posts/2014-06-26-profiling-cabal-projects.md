@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tutorial: Profiling Cabal projects"
-tags: [haskell, cabal, profiling]
+tags: [haskell, cabal, profiling, tutorial]
 description: A tutorial on how to set up Cabal projects for profiling
 comments: true
 ---
@@ -100,3 +100,7 @@ This command is a two-parter:
 * `hp2ps -e8in -c my-project-profiling.hp` converts the generated "my-project-profiling.hp" into a postscript graph.
 
 Obviously you have to replace "my-project-profiling" with whatever the name you've specified in your cabal configuration.
+
+After running, you'll get all the reports generated. All that will be left to do is to analyse them. You can find plenty of tutorials on analysing the data throughout the web.
+
+Happy profiling!
