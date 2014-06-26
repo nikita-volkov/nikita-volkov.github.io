@@ -1,7 +1,7 @@
 title:            Programs debug you
 description:      A blog about Haskell and functional programming
 # Your site's domain goes here. Leave localhost server or blank when working locally.
-url:              http://localhost:4000
+url:              http://nikita-volkov.github.io
 disqus_shortname: programsdebugyou
 
 # Owner/author information
