@@ -1,7 +1,7 @@
 ---
 layout: home
-description: "A responsive Jekyll theme with editorial tendencies by designer Michael Rose."
-tags: [Jekyll, theme, responsive, blog, template]
+description: "A programming blog of Nikita Volkov"
+tags: [nikita volkov, haskell, scala, blog]
 image:
   feature: texture-feature-01.jpg
   credit: Texture Lovers
