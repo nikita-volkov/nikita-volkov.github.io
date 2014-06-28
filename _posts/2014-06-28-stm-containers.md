@@ -53,7 +53,7 @@ Following are the details and the results of running the benchmarks on my 6-core
 
 ### Insertion Benchmark
 
-This one compares the performance of a single-threaded insertion of a `100 000` of different libraries. It contains 5 subjects:
+This one compares the performance of a single-threaded insertion of a `100 000` rows by various libraries. It contains 5 subjects:
 
 1. _STM Containers/focus-based._ Insertion done using the `focus` function.
 1. _STM Containers/specialized._ The specialized `insert` function.
@@ -69,7 +69,7 @@ We can conclude the following:
 
 * It performs on par with the the "containers" library. 
 * It is a bit slower than "unordered-containers". Running the benchmark several times has shown that its performance is within 70-90%%.
-* The insertion done with the `focus` function, is  slightly slower than with the specialized `insert` function. This means that running the composite strategies of [the "focus" package](http://hackage.haskell.org/package/focus) will be quite efficient. However implementing the specialized versions of `delete` and `lookup` in future will be beneficial.
+* The insertion done with the `focus` function, is only slightly slower than with the specialized `insert` function. This means that running the composite strategies of [the "focus" package](http://hackage.haskell.org/package/focus) will be quite efficient. However implementing the specialized versions of `delete` and `lookup` in future will be beneficial.
 
 ### Concurrent Insertion Benchmark
 
@@ -89,6 +89,7 @@ The conclusions:
 
 * The "stm-containers" scale well up to 12 threads. This is quite expected for a 6-core hyperthreaded processor, which the benchmark has been run on.
 * `TVar (HashMap (TVar a))` basically stops scaling after 2-4 threads, which proves the suspicions from [the beginning of this post]({{page.url}}#why-not-a-hashmap-over-tvars).
+* `TVar (HashMap (TVar a))` never reaches even a 2x factor of scaling.
 * `TVar (HashMap (TVar a))` performs worse than "stm-containers" even on a single thread.
 
 ### Concurrent Transactions Benchmark
@@ -117,4 +118,4 @@ To execute the benchmarks, check out [the source tree](https://github.com/nikita
 
     cabal bench insertion-bench --benchmark-options="-odist/insertion.html -g -s100" && cabal bench concurrent-insertion-bench --benchmark-options="-odist/concurrent-insertion.html -g -s100" && cabal bench concurrent-transactions-bench --benchmark-options="-odist/concurrent-transactions.html -g -s100"
 
-When finished, you'll find three HTML files in the "dist" directory. Please publish them.
+When it finishes, you'll find three HTML files in the "dist" directory. Please publish them.
