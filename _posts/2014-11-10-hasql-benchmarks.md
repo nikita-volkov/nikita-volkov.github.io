@@ -50,7 +50,7 @@ This is the most general benchmark. It includes both encoding and decoding on to
 [![Writing transaction](/assets{{page.id}}/writing-transaction.png)](/assets{{page.id}}/writing-transaction.png) 
 (<a href="/assets{{page.id}}/writing-transaction.html" target="_blank">HTML version</a>)
 
-Here the difference is more suddle: Hasql is 1.18 times faster than "postgresql-simple" and 1.58 times faster than "HDBC".
+Here the difference is more subtle: Hasql is 1.18 times faster than "postgresql-simple" and 1.58 times faster than "HDBC".
 
 ## What makes Hasql so fast?
 
