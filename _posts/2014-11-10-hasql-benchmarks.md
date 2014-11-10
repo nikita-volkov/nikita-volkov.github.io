@@ -32,7 +32,7 @@ And here are the results:
 [![Results parsing](/assets{{page.id}}/results-parsing.png)](/assets{{page.id}}/results-parsing.png) 
 (<a href="/assets{{page.id}}/results-parsing.html" target="_blank">HTML version</a>)
 
-We see that Hasql is 2.5 times faster than "postgresql-simple" and 8 times faster than "HDBC".
+We see that Hasql is 2 times faster than "postgresql-simple" and 7 times faster than "HDBC".
 
 ### Templates and rendering
 
@@ -41,7 +41,7 @@ In this example a `SELECT` query is performed as well. Only this time there are 
 [![Templates and rendering](/assets{{page.id}}/templates-and-rendering.png)](/assets{{page.id}}/templates-and-rendering.png) 
 (<a href="/assets{{page.id}}/templates-and-rendering.html" target="_blank">HTML version</a>)
 
-We see that Hasql is 1.5 times faster than "postgresql-simple" and 3 times faster than "HDBC".
+We see that Hasql is 1.7 times faster than "postgresql-simple" and 2.8 times faster than "HDBC".
 
 ### Writing transaction
 
@@ -50,7 +50,7 @@ This is the most general benchmark. It includes both encoding and decoding on to
 [![Writing transaction](/assets{{page.id}}/writing-transaction.png)](/assets{{page.id}}/writing-transaction.png) 
 (<a href="/assets{{page.id}}/writing-transaction.html" target="_blank">HTML version</a>)
 
-Here the difference is more subtle: Hasql is 1.18 times faster than "postgresql-simple" and 1.58 times faster than "HDBC".
+Here the difference is more subtle: Hasql is 1.26 times faster than "postgresql-simple" and 1.59 times faster than "HDBC".
 
 ## What makes Hasql so fast?
 
@@ -60,7 +60,7 @@ So we've seen that Hasql dominates in every case. There are fundamentally differ
 
 * Unlike "postgresql-simple", the library utilizes parametric queries instead of recompiling them every time they are used.
 
-* Unlike "postgresql-simple", the library utilizes prepared statements, which requires the database to parse the SQL statements only once per connection.
+* Unlike "postgresql-simple", the library utilizes prepared statements, which allows the database to parse the SQL statements only once per connection.
 
 * Unlike both "HDBC" and "postgresql-simple", the PostgreSQL backend of Hasql uses a binary format for communication, which eradicates a bunch of overhead related to parsing, rendering and transfering of values on both ends: the library and the database itself.
 
