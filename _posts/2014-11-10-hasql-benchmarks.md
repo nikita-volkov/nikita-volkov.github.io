@@ -17,7 +17,7 @@ comments: true
   </div>
 </section><!-- /#table-of-contents -->
 
-This post is all about performance of "hasql" in comparison to its popular direct competitors: "HDBC" and "postgresql-simple".
+This post is all about the performance of [the "hasql" library](http://hackage.haskell.org/package/hasql) and particularly [its PostgreSQL backend](http://hackage.haskell.org/package/hasql-postgres) in comparison to its popular direct competitors: "HDBC" and "postgresql-simple".
 
 ## Benchmarks
 
