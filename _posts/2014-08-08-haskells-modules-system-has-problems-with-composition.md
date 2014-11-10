@@ -31,7 +31,7 @@ Here's what I mean by a schematic example:
                                      These entities might well themselves be
                                      decomposed into more abstraction layers.
 
-Imagine a LEGO constructor. You can think of the entities of the second abstraction layer as of kinds of blocks and of the sole entity of the first abstraction layer as of the house you build from them. Such a thing as some form of a dependency of one block on another block simply doesn't make sense, however the house you're building evidently depends on what blocks you use and how you stick them together, i.e., how you **compose** them.
+Imagine a LEGO constructor. You can think of the entities of the second abstraction layer as of kinds of blocks and of the sole entity of the first abstraction layer as of the house you build from them. Such a thing as some form of a dependency of one block on another block simply doesn't make sense, however the house you're building evidently depends on what blocks you use and how you stick them together, i.e., how you **compose** it.
 
 This is essentially all that the composition is about. By following this principle you ensure that your program's structure is consistent and predictable, and, hence, clear. Transitively this results in a code that is easy to reason about and maintain.
 
