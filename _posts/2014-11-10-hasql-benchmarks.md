@@ -36,7 +36,7 @@ We see that Hasql is 2 times faster than "postgresql-simple" and 7 times faster 
 
 ### Templates and rendering
 
-In this example a `SELECT` query is performed as well. Only this time there are parameters to encode and no results get decoded. So, what we measure is how well the subject deals with rendering of parameters and queries.
+In this benchmark a `SELECT` query is performed as well. Only this time there are parameters to encode and no results get decoded. So, what we measure is how well the subject deals with rendering of parameters and queries.
 
 [![Templates and rendering](/assets{{page.id}}/templates-and-rendering.png)](/assets{{page.id}}/templates-and-rendering.png) 
 (<a href="/assets{{page.id}}/templates-and-rendering.html" target="_blank">HTML version</a>)
