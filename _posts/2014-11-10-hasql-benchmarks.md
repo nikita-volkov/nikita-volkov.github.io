@@ -17,11 +17,11 @@ comments: true
   </div>
 </section><!-- /#table-of-contents -->
 
-This post is all about the performance of [the "hasql" library](http://hackage.haskell.org/package/hasql) and particularly [its PostgreSQL backend](http://hackage.haskell.org/package/hasql-postgres) in comparison to its popular direct competitors: "HDBC" and "postgresql-simple".
+This post is all about the performance of [the "hasql" library](http://hackage.haskell.org/package/hasql) and particularly [its PostgreSQL back end](http://hackage.haskell.org/package/hasql-postgres) in comparison to its popular direct competitors: "HDBC" and "postgresql-simple".
 
 ## Benchmarks
 
-The source of the PostgreSQL backend comes with [a suite of 3 benchmarks](https://github.com/nikita-volkov/hasql-postgres/blob/57b79ba6e28bb6b3b2965a1802e237a4bbc190ed/competition/Main.hs). I'll analyze them one by one.
+The source of the PostgreSQL back end comes with [a suite of 3 benchmarks](https://github.com/nikita-volkov/hasql-postgres/blob/57b79ba6e28bb6b3b2965a1802e237a4bbc190ed/competition/Main.hs). I'll analyze them one by one.
 
 ### Results parsing
 
@@ -56,12 +56,12 @@ Here the difference is more subtle: Hasql is 1.26 times faster than "postgresql-
 
 So we've seen that Hasql dominates in every case. There are fundamentally different design decisions from its competitors that cause this:
 
-* Unlike in "HDBC", the font-end API brings no intermediate types, which eradicates unneccessary conversions.
+* Unlike in "HDBC", the front end API brings no intermediate types, which eradicates unneccessary conversions.
 
 * Unlike "postgresql-simple", the library utilizes parametric queries instead of recompiling them every time they are used.
 
 * Unlike "postgresql-simple", the library utilizes prepared statements, which allows the database to parse the SQL statements only once per connection.
 
-* Unlike both "HDBC" and "postgresql-simple", the PostgreSQL backend of Hasql uses a binary format for communication, which eradicates a bunch of overhead related to parsing, rendering and transfering of values on both ends: the library and the database itself.
+* Unlike both "HDBC" and "postgresql-simple", the PostgreSQL back end of Hasql uses a binary format for communication, which eradicates a bunch of overhead related to parsing, rendering and transfering of values on both ends: the library and the database itself.
 
 
