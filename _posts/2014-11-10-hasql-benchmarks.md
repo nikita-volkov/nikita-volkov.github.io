@@ -21,7 +21,7 @@ This post is all about the performance of [the "hasql" library](http://hackage.h
 
 ## Benchmarks
 
-The source of the PostgreSQL back end comes with [a suite of 3 benchmarks](https://github.com/nikita-volkov/hasql-postgres/blob/57b79ba6e28bb6b3b2965a1802e237a4bbc190ed/competition/Main.hs). I'll analyze them one by one.
+The source of the PostgreSQL back end comes with [a suite of 3 benchmarks](https://github.com/nikita-volkov/hasql-postgres/blob/8cf88782ae1d3886cf0ca35c15b056d439204029/competition/Main.hs). I'll analyze them one by one.
 
 ### Results parsing
 
