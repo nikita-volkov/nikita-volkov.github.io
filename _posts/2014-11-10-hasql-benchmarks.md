@@ -58,7 +58,7 @@ So we've seen that Hasql dominates in every case. There are fundamentally differ
 
 * Unlike in "HDBC", the front end API brings no intermediate types, which eradicates unneccessary conversions.
 
-* Unlike "postgresql-simple", the library utilizes parametric queries instead of recompiling them every time they are used.
+* Unlike "postgresql-simple", the library utilizes parametric queries instead of recompiling them for every value.
 
 * Unlike "postgresql-simple", the library utilizes prepared statements, which allows the database to parse the SQL statements only once per connection.
 
