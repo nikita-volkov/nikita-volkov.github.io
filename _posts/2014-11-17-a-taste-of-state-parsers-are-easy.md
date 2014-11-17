@@ -7,7 +7,7 @@ comments: true
 
 ---
 
-Like many other Haskellers even after considering myself an expert in that language I still get that amazing "wow" moment, when I learn another elegant thing about its basic concepts, from time to time. 
+Like many other Haskellers even after considering myself an expert in the language I still get that amazing "wow" moment, when I learn another elegant thing about its basic concepts, from time to time. 
 
 Recently I was working on a project, which required a primitive parsing functionality, and I discovered that amazing results in terms of performance can be achieved using the good old _State_ monad. This post is about what I discovered and how.
 
