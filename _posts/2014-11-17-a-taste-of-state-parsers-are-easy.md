@@ -149,9 +149,10 @@ Let's finish our parser:
 
 {% highlight haskell %}
 -- | Decode an interval as an amount of picoseconds.
-interval :: State ByteString Integer
+interval :: ByteString -> Integer
 interval =
-  combineInterval <$> intOfSize 8 <*> intOfSize 4 <*> intOfSize 4
+  evalState $
+    combineInterval <$> intOfSize 8 <*> intOfSize 4 <*> intOfSize 4
   where
     bsOfSize = 
       state . ByteString.splitAt
