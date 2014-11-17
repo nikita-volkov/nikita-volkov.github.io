@@ -13,7 +13,7 @@ Recently I was working on a project, which required a primitive parsing function
 
 ## Introduction
 
-So I was working on [a library of codecs for the _PostgreSQL_'s binary format](http://hackage.haskell.org/package/postgresql-binary) as part of the [_Hasql_](http://hackage.haskell.org/package/hasql)'s ecosystem. The first thing I discovered was that _Postgres_' authors are very bad at documentation. So bad actually that all the info about the binary format a project committer could give on _Stack Overflow_ was that [it's "significantly difficult"](http://stackoverflow.com/a/19614910/485115). There are no specs, no documentation on it anywhere. Nada. Though very frustrated by that fact I was still determined, so I found a solution.
+So I was working on [a library of codecs for the _PostgreSQL_'s binary format](http://hackage.haskell.org/package/postgresql-binary) as part of the [_Hasql_](http://hackage.haskell.org/package/hasql)'s ecosystem. The first thing I discovered was that _Postgres_' authors are very bad at documentation. There are no specs, no documentation on it anywhere. Nada. Though very frustrated by that fact I was still determined, so I found a solution.
 
 After digging around I found [the _"libpqtypes"_ library](http://libpqtypes.esilo.com/), which implemented the format in _C_. Luckily it was open source, so I decided to use it as a sort of a spec. My discoveries concerning the _State_ monad hit me, when I was translating that _C_ code.
 
