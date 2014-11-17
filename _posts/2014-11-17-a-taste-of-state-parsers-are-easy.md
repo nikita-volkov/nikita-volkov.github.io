@@ -193,7 +193,7 @@ interval =
       10 ^ 6 * (u + 10 ^ 6 * 60 * 60 * 24 * (d + 31 * m))
 {% endhighlight %}
 
-Neat! Our own library of composable components. We could of course spend our day shifting indexes, constantly repeating ourselves and hoping we don't mess up, like they do in _C_, but that's not how we roll in _Haskell_! We make reusable libraries out of nowhere.
+Neat! Our own library of composable components. We could of course spend our day shifting indexes, constantly repeating ourselves and hoping we don't mess up, like they do in _C_, but that's not how we roll in _Haskell_! We make reusable libraries out of nowhere, without even intending to do so.
 
 You might be wondering now about the parsers that can fail. Turns out, the following updates are all it takes to implement the support for that:
 
