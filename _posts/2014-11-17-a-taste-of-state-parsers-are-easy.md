@@ -24,9 +24,16 @@ Prior to going further I have to say a little about binary encodings. An importa
     byte1, byte2, byte3, byte4, byte5, byte6, ..., byteN
               HEAD             |           BODY         
 
-Where the first four bytes are the head, which encodes a 32-bit integer (8 * 4 = 32). This integer specifies the amount of the following bytes, which make up the body. While this isn't the only possible scenario, it proves that it is possible to encode a data of an arbitrary length without any delimiters.
+Where the first four bytes are the head, which encodes a 32-bit integer (8 * 4 = 32). This integer specifies the amount of the following bytes, which make up the body. While this isn't the only possible scenario, it proves that it is possible to encode a data of an arbitrary length without any delimiters. So no quotes, braces, commas, dashes or anything like that to distinguish contexts.
 
-So no quotes, braces, commas, dashes or anything like that to distinguish contexts. This means that our parser requires no backtracking or alternatives, or any other complex strategies required to parse human-readable formats. Turns out, that is what makes the _State_ monad sufficient for implementing a binary parser.
+Here's another example:
+
+    byte1, byte2, byte3, ..., byteN
+     HEAD |         BODY
+
+The single byte of the head is a _Word8_, which determines the alternative scenarios of how the body should be decoded. E.g., if it is `0`, then the body is a text, if it is `1`, then it is a list of ints and etc.
+
+Turns out, mixing the aforementioned strategies together gives you all you need to encode pretty much anything. This means that a parser for this encoding will require no backtracking or alternatives, or any other complex strategies needed to parse human-readable formats, and this is what makes the _State_ monad sufficient for implementing a binary parser.
 
 ## The parser
 
