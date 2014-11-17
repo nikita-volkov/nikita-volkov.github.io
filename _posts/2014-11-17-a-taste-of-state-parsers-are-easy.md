@@ -80,7 +80,7 @@ where
   bsOfSize = state . ByteString.splitAt
 {% endhighlight %}
 
-And here comes the composition! A smaller independent piece is used to make up a bigger one.
+And here comes the composition! A smaller independent piece is used to make up a bigger one of the same type.
 
 Okay, so we have our three sections now, but it's still all binary data, which we need to decode. I already know that months and days are integers encoded in the _Big Endian_ format. A decoder for it is pretty simple:
 
