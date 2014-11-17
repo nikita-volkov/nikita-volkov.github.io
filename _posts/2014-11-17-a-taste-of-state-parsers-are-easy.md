@@ -239,7 +239,7 @@ if (putit)
 _Haskell_:
 
 {% highlight haskell %}
-map (chr . (+) (ord '0')) $ dropWhile (== 0) $ evalState $ do
+map (chr . (+) (ord '0')) . dropWhile (== 0) . evalState $ do
   a <- state $ flip divMod 1000
   b <- state $ flip divMod 100
   c <- state $ flip divMod 10
