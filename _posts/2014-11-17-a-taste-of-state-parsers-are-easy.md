@@ -216,7 +216,7 @@ interval =
 
 Neat! Our own library of composable components. We could of course spend our day shifting indexes, constantly repeating ourselves and hoping we don't mess up, like they do in _C_, but that's not how we roll in _Haskell_! We make reusable libraries out of nowhere, without even intending to do so.
 
-Do you feel how intuitive the code we've just produced is? I mean, an interval is a computation performed on ints of sizes 8, 4 and 4. An int is a certain decoding performed on a bytestring of some length. A bytestring of some length is simply a splitting of a part from the beginning of the input bytestring. It's all there in the code stated almost just as I said. That's what the _Declarative Programming_ is all about.
+Do you feel how intuitive the code we've just produced is? I mean, an interval is a computation performed on ints of sizes 8, 4 and 4. An int is a certain decoding performed on a bytestring of some length. A bytestring of some length is simply a splitting of a part from the beginning of the input bytestring. It's all there in the code stated almost just as I said. That's what the _Declarative Programming_ is all about. A program is no longer a set of index shifts, loops and temporary variables, and all that kinda noise, it is a composition of clear and simple definitions.
 
 You might be wondering now about the parsers that can fail. Turns out, the following updates are all it takes to implement the support for that:
 
