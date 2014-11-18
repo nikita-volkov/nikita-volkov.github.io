@@ -55,7 +55,7 @@ let
   (days, months)        = ByteString.splitAt 4 byteString'
 {% endhighlight %}
 
-Now we have an input byte string split into 3 useful sections, which we can later process. When talking about such things as sections or parts a seasoned Haskeller might instinctively start thinking about composition, but hold that thought for now. 
+Now we have an input byte string split into 3 useful sections, which we can later process. When talking about such things as sections or parts though, a seasoned Haskeller might instinctively start thinking about composition, but hold that thought for now. 
 
 In our code there's already an easily spottable pattern and an annoying and error-prone noise caused by the explicit updating of `byteString`. Imagine having more sections to split into and accidentally confusing `byteString'` with `byteString''` - that's a bug the compiler won't spot for you, since the types are the same. 
 
