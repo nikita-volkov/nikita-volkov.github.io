@@ -24,7 +24,7 @@ Prior to going further I have to say a little about binary encodings. An importa
     byte1, byte2, byte3, byte4, byte5, byte6, ..., byteN
               HEAD             |           BODY         
 
-Where the first four bytes are the head, which encodes a 32-bit integer (8 * 4 = 32). This integer specifies the amount of the following bytes, which make up the body. While this isn't the only possible scenario, it proves that it is possible to encode a data of an arbitrary length without any delimiters. So no quotes, braces, commas, dashes or anything like that to distinguish contexts.
+Where the first four bytes are the head, which encodes a 32-bit integer (8 * 4 = 32). This integer specifies the amount of the following bytes, which make up the body. While this isn't the only possible scenario, it proves that it is possible to encode a data of an arbitrary length without any delimiters. So no quotes, braces, commas, dashes or anything like that to distinguish contexts and no escaping is required.
 
 Here's another example:
 
