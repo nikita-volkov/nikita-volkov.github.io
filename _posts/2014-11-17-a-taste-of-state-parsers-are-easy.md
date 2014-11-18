@@ -151,8 +151,12 @@ Let's finish our parser:
 -- | Decode an interval as an amount of picoseconds.
 interval :: ByteString -> Integer
 interval =
-  evalState $
-    combineInterval <$> intOfSize 8 <*> intOfSize 4 <*> intOfSize 4
+  evalState $ do
+    u <- intOfSize 8
+    d <- intOfSize 4
+    m <- intOfSize 4
+    return $ 
+      10 ^ 6 * (u + 10 ^ 6 * 60 * 60 * 24 * (d + 31 * m))
   where
     bsOfSize = 
       state . ByteString.splitAt
@@ -160,7 +164,24 @@ interval =
       ByteString.foldl' (\n h -> (n `shiftL` 8) .|. fromIntegral h) 0
     intOfSize = 
       fmap decodeInt . bsOfSize
-    combineInterval u d m =
+{% endhighlight %}
+
+There's one stylistic problem left: we're mixing a monadic code with a pure computation. It's always better to decompose those things. So here comes the _Applicative style_ and one last refactoring:
+
+{% highlight haskell %}
+-- | Decode an interval as an amount of picoseconds.
+interval :: ByteString -> Integer
+interval =
+  evalState $
+    udmInterval <$> intOfSize 8 <*> intOfSize 4 <*> intOfSize 4
+  where
+    bsOfSize = 
+      state . ByteString.splitAt
+    decodeInt = 
+      ByteString.foldl' (\n h -> (n `shiftL` 8) .|. fromIntegral h) 0
+    intOfSize = 
+      fmap decodeInt . bsOfSize
+    udmInterval u d m =
       10 ^ 6 * (u + 10 ^ 6 * 60 * 60 * 24 * (d + 31 * m))
 {% endhighlight %}
 
@@ -187,9 +208,9 @@ intOfSize =
 
 interval :: Parser Integer
 interval =
-  combine <$> intOfSize 8 <*> intOfSize 4 <*> intOfSize 4
+  udmInterval <$> intOfSize 8 <*> intOfSize 4 <*> intOfSize 4
   where
-    combine u d m =
+    udmInterval u d m =
       10 ^ 6 * (u + 10 ^ 6 * 60 * 60 * 24 * (d + 31 * m))
 {% endhighlight %}
 
