@@ -166,7 +166,7 @@ interval =
       fmap decodeInt . bsOfSize
 {% endhighlight %}
 
-There's one stylistic problem left: we're mixing a monadic code with a pure computation. It's always better to decompose those things. So here comes the _Applicative style_ and one last refactoring:
+There's one stylistic problem left: we're mixing a monadic code with a pure computation. It's always better to isolate those things. So here comes the _Applicative style_ and one last refactoring:
 
 {% highlight haskell %}
 -- | Decode an interval as an amount of picoseconds.
