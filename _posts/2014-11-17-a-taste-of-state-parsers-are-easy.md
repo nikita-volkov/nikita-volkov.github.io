@@ -108,7 +108,7 @@ where
   bsOfSize = 
     state . ByteString.splitAt
   decodeInt = 
-    ByteString.foldl' (\n h -> (n `shiftL` 8) .|. fromIntegral h) 0
+    ByteString.foldl' (\n h -> shiftL n 8 .|. fromIntegral h) 0
 {% endhighlight %}
 
 Another pattern. Refactoring:
@@ -123,7 +123,7 @@ where
   bsOfSize = 
     state . ByteString.splitAt
   decodeInt = 
-    ByteString.foldl' (\n h -> (n `shiftL` 8) .|. fromIntegral h) 0
+    ByteString.foldl' (\n h -> shiftL n 8 .|. fromIntegral h) 0
 {% endhighlight %}
 
 Still a pattern. Refactoring:
@@ -138,7 +138,7 @@ where
   bsOfSize = 
     state . ByteString.splitAt
   decodeInt = 
-    ByteString.foldl' (\n h -> (n `shiftL` 8) .|. fromIntegral h) 0
+    ByteString.foldl' (\n h -> shiftL n 8 .|. fromIntegral h) 0
   intOfSize = 
     fmap decodeInt . bsOfSize
 {% endhighlight %}
@@ -161,7 +161,7 @@ interval =
     bsOfSize = 
       state . ByteString.splitAt
     decodeInt = 
-      ByteString.foldl' (\n h -> (n `shiftL` 8) .|. fromIntegral h) 0
+      ByteString.foldl' (\n h -> shiftL n 8 .|. fromIntegral h) 0
     intOfSize = 
       fmap decodeInt . bsOfSize
 {% endhighlight %}
@@ -178,7 +178,7 @@ interval =
     bsOfSize = 
       state . ByteString.splitAt
     decodeInt = 
-      ByteString.foldl' (\n h -> (n `shiftL` 8) .|. fromIntegral h) 0
+      ByteString.foldl' (\n h -> shiftL n 8 .|. fromIntegral h) 0
     intOfSize = 
       fmap decodeInt . bsOfSize
     udmInterval u d m =
@@ -204,7 +204,7 @@ intOfSize =
   fmap decodeInt . bsOfSize
   where
     decodeInt = 
-      ByteString.foldl' (\n h -> (n `shiftL` 8) .|. fromIntegral h) 0
+      ByteString.foldl' (\n h -> shiftL n 8 .|. fromIntegral h) 0
 
 interval :: Parser Integer
 interval =
