@@ -122,7 +122,4 @@ When it finishes, you'll find three HTML files in the "dist" directory. Please p
 
 ## Update
 
-Christopher Biscardi has published results of running benchmarks on a 12-core Mac:
-http://www.christopherbiscardi.com/2014/06/29/stm-containers-benchmarks/
-
-Thanks, Christopher!
+Christopher Biscardi has published [results of running benchmarks on a 12-core Mac](http://www.christopherbiscardi.com/2014/06/29/stm-containers-benchmarks/). Thanks, Christopher!
