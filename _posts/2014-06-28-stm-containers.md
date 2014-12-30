@@ -119,3 +119,10 @@ To execute the benchmarks, check out [the source tree](https://github.com/nikita
     cabal bench insertion-bench --benchmark-options="-odist/insertion.html -g -s100" && cabal bench concurrent-insertion-bench --benchmark-options="-odist/concurrent-insertion.html -g -s100" && cabal bench concurrent-transactions-bench --benchmark-options="-odist/concurrent-transactions.html -g -s100"
 
 When it finishes, you'll find three HTML files in the "dist" directory. Please publish them.
+
+## Update
+
+Christopher Biscardi has published results of running benchmarks on a 12-core Mac:
+http://www.christopherbiscardi.com/2014/06/29/stm-containers-benchmarks/
+
+Thanks, Christopher!
