@@ -1,9 +1,9 @@
 ---
 layout: home
-description: "A programming blog of Nikita Volkov"
+excerpt: "A blog about Haskell and functional programming"
 tags: [nikita volkov, haskell, scala, blog]
 image:
-  feature: texture-feature-01.jpg
-  credit: Texture Lovers
-  creditlink: http://texturelovers.com
+  feature: sample-image-1.jpg
+  credit: WeGraphics
+  creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
 ---
