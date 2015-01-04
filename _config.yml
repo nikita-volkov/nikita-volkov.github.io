@@ -1,51 +1,20 @@
+# Site wide configuration
+
 title:            Functional programming debugs you
-description:      A blog about Haskell and functional programming
-# Your site's domain goes here. Leave localhost server or blank when working locally.
-url:              http://nikita-volkov.github.io
-disqus_shortname: programsdebugyou
+locale:           en_US
+url:              
 
-# Owner/author information
-owner:
-  name:           Nikita Volkov
-  avatar:         bio-photo-5.jpg
-  bio:            
-  email:          nikita.y.volkov@mail.ru
-  # Social networking links are used in author-bio sidebar. Update and remove as you like.
-  twitter:
-  facebook:
-  github: nikita-volkov
-  stackoverflow: 485115
-  linkedin: nvolkov
-  instagram:
-  lastfm:
-  tumblr:
-  pinterest:
-  foursquare:
-  steam:
-  dribbble:
-  # For Google Authorship https://plus.google.com/authorship
-  google_plus:
 
-# Analytics and webmaster tools stuff goes here
-google_analytics: UA-36033885-2
-google_verify:
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:
+# Jekyll configuration
 
-# Links to include in top navigation
-# For external links add external: true
-links:
-  - title: Posts
-    url: /posts/
-
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    Russia/Moscow
-future:      true
-highlighter: pygments
-markdown:    kramdown
-
-# https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink:   /:categories/:title/
+markdown:    kramdown
+highlighter: pygments
+sass:
+  sass_dir: _sass
+  style: compressed
+gems:
+  - jekyll-sitemap
 
 kramdown:
   auto_ids: true
@@ -54,12 +23,35 @@ kramdown:
   toc_levels: 1..6
   use_coderay: false
 
-  coderay:
-    coderay_line_numbers:
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: class
+
+# Site owner
+owner:
+  name: Nikita Volkov
+  avatar: bio-photo-5.jpg
+  bio: 
+  email: nikita.y.volkov@mail.ru
+  disqus-shortname: programsdebugyou
+  twitter: NikitaYVolkov
+  facebook: #username
+  google:
+    plus: #username
+    analytics: UA-36033885-2
+    verify: 
+    ad-client: 
+    ad-slot: 
+  bing-verify: 
+  github: nikita-volkov
+  stackoverflow: http://stackoverflow.com/users/485115
+  linkedin: nvolkov
+  instagram: #username
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
 
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
