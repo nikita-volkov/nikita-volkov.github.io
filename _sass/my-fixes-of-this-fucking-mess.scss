@@ -1,8 +1,13 @@
 p code, li code {
+  font-size: 14px;
   padding: 0;
   margin: 0;
   white-space: pre;
   border: none;
+}
+
+p code {
+  padding: 2px 4px;
 }
 
 p+p {
@@ -12,4 +17,5 @@ p+p {
 
 code, kbd, pre, samp {
   font-family: Source Code Pro, monospace;
+  font-size: 14px;
 }
