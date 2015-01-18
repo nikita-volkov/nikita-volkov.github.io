@@ -1,0 +1,11 @@
+p code, li code {
+  padding: 0;
+  margin: 0;
+  white-space: pre;
+  border: none;
+}
+
+p+p {
+  text-indent: 0;
+  margin-top: 0;
+}
