@@ -7,6 +7,8 @@ comments: true
 
 ---
 
+A couple of days ago I released [the "stm-containers" library](http://hackage.haskell.org/package/stm-containers). In this post I'll talk about the motivation behind the library, its features and performance.
+
 <section id="table-of-contents" class="toc">
   <header>
     <h3>Contents</h3>
@@ -16,8 +18,6 @@ comments: true
   {:toc}
   </div>
 </section><!-- /#table-of-contents -->
-
-A couple of days ago I released [the "stm-containers" library](http://hackage.haskell.org/package/stm-containers). In this post I'll talk about the motivation behind the library, its features and performance.
 
 ## Motivation
 

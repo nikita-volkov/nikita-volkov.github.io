@@ -11,6 +11,16 @@ Like many other Haskellers even after considering myself an expert in the langua
 
 Recently I was working on a project, which required a primitive parsing functionality, and I discovered that amazing results in terms of performance can be achieved using the good old _State_ monad. This post is about what I discovered and how.
 
+<section id="table-of-contents" class="toc">
+  <header>
+    <h3>Contents</h3>
+  </header>
+  <div id="drawer" markdown="1"> 
+  *  Auto generated table of contents
+  {:toc}
+  </div>
+</section><!-- /#table-of-contents -->
+
 ## Introduction
 
 So I was working on [a library of codecs for the _PostgreSQL_'s _Binary Format_](http://hackage.haskell.org/package/postgresql-binary) as part of the [_Hasql_](http://hackage.haskell.org/package/hasql)'s ecosystem. The first thing I discovered was that _Postgres_' authors are very bad at documentation. Google all day, and you won't find even a reminder of specs of the _Binary Format_. Nada. Though very frustrated by that fact I was still determined, so I found a solution.
