@@ -112,7 +112,7 @@ data Sum3 v1 v2 v3 =
   Sum3_1 v1 | Sum3_2 v2 | Sum3_3 v3
 {% endhighlight %}
 
-## What about laziness and strictness?
+## Laziness and strictness
 
 All types are provided in two variations: with all fields lazy and with all fields strict. E.g., a strict variation of `Sum3` is defined like this:
 
