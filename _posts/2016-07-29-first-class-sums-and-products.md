@@ -153,10 +153,10 @@ However several problems are already evident here:
 
 1. Which one is easier on the eye: the above or the following?
 
-    {% highlight haskell %}
-    type MySumType =
-      Int + Char + Bool + Text
-    {% endhighlight %}
+{% highlight haskell %}
+type MySumType =
+  Int + Char + Bool + Text
+{% endhighlight %}
 
 ## Product-types vs. tuples
 
