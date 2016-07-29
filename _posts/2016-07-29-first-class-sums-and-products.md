@@ -88,7 +88,7 @@ launchAndLandRockets :: ExceptT (LaunchError + LandingError) IO ()
 
 where the function `launchAndLandRockets` ends up using the composed type `LaunchError1 + LaunchError2 + LandingError1 + LandingError2` for its error.
 
-## What are those `+` and `*` operators?
+## What are those + and * operators?
 
 Those are closed type-families, which resolve the specific sum- and product-types of the according arity. For instance the definition of the `SumAndProductMixture` type from the examples above actually gets resolved to the following:
 
@@ -99,11 +99,11 @@ type SumAndProductMixture =
 
 _Notice that because the closed type families were only introduced in GHC 7.8, it's the oldest compiler version supported by the library. Also you will need to enable the `TypeFamilies` extension._
 
-## Aren't there conflicts with the standard functions `+` and `*`?
+## Aren't there conflicts with the standard functions + and *?
 
 Nope, there aren't. As per the compiler's opinion, they live in separate universes: type- and value-level.
 
-## What are those `Sum3`, `Product2` and etc.?
+## What are those Sum3, Product2 and etc.?
 
 Those are polymorphic types predefined by the library. E.g., here's the definition of one of them:
 
