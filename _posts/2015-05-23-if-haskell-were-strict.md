@@ -63,7 +63,7 @@ Feels like we're coming closer to the laziness. But we're yet lacking the preser
 
 ## Thunk
 
-    Please notice that I've improved the following solution and released it as [the "lazy" library](http://hackage.haskell.org/package/lazy). Still it's worth reading for understanding.
+_Please notice that I've improved the following solution and released it as [the "lazy" library](http://hackage.haskell.org/package/lazy). Still it's worth reading for understanding._
 
 Thunk is a basic mechanism that drives Haskell's laziness. The internet is filled with excellent tutorials about it, if you don't know about it yet. Following is how we could implement it explicitly in a library if Haskell were strict:
 
