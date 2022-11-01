@@ -30,7 +30,7 @@ owner:
   avatar: bio-photo-5.jpg
   bio: 
   email: nikita.y.volkov@mail.ru
-  disqus-shortname: programsdebugyou
+  # disqus-shortname: programsdebugyou
   twitter: NikitaYVolkov
   facebook: #username
   google:
