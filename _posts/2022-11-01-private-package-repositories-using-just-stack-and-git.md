@@ -65,7 +65,8 @@ Push the changes and copy the commit hash.
 Add the "utils" repository to the snapshot pointing to the commit hash that you've just copied.
 
 ```yaml
-resolver: .stack-snapshot/snapshot.yaml
+name: our-org-snapshot
+resolver: nightly-2022-10-25
 packages:
   - git: https://github.com/our-org/utils
     commit: <commit-hash>
@@ -78,7 +79,8 @@ Push the changes.
 By repeating the previous two steps for both. You'll end up with the following stack-snapshot:
 
 ```yaml
-resolver: .stack-snapshot/snapshot.yaml
+name: our-org-snapshot
+resolver: nightly-2022-10-25
 packages:
   - git: https://github.com/our-org/utils
     commit: <commit-hash>
