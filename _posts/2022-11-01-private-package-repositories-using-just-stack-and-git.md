@@ -8,16 +8,6 @@ comments: false
 
 If you're working in an organization that maintains a private Haskell codebase chances are you've stumbled upon the problem of distribution of packages. The typical approaches to this are either to avoid that altogether by maintaining the whole codebase of the org as a monorepo or to manage a private Hackage server. Both come with their own sets of problems. The first tends to entangle the codebase and makes it hard to introduce teams and isolate the areas of responsibility. The second introduces an adminstrative burden and complicates the development setup. Today I'm gonna share a different technique which I've found to be both simpler and correct.
 
-<section id="table-of-contents" class="toc">
-  <header>
-    <h3>Contents</h3>
-  </header>
-  <div id="drawer" markdown="1"> 
-  *  Auto generated table of contents
-  {:toc}
-  </div>
-</section><!-- /#table-of-contents -->
-
 # Concepts
 
 **Stack** has the concept of **Snapshots**. The snapshot specifies a set of packages at specific versions and the information on where to get them from. The location can be a Hackage package, a tarball or a git-repository at a specific commit. Standard snapshots get distributed on [stackage.org](https://stackage.org), but we also can specify our own which can extend the standard ones. We can refer to them by URLs or by local paths in the `resolver` field of the `stack.yaml` file.
