@@ -37,7 +37,11 @@ With this library I found the perfect integration point.
 
 Not the business logic model. Not the table row structure. **The query itself.**
 
-The query determines the structure of parameters it needs and what it returns. Trying to reuse "row types" across queries only creates hidden dependencies and future breakage.
+The query determines the structure of parameters it needs and what it returns. The types that represent those parameters and results are just that - parameters and results **of that particular query**. They are not your table rows, they are not your business models. However similar they may look, they are not the same thing and they **will** evolve independently and become different given enough time.
+
+**Similar ≠ same, looks ≠ identity.**
+
+Reusing row types across queries creates hidden dependencies and plants future failures: change one query and another silently fails. Attaching domain models to database entities escalates this problem to other application layers. Coupling to API types is just a recipe to get either an API violation or a database integration bug.
 
 That perspective made a solid foundation, but something was still missing.
 
