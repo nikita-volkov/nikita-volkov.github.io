@@ -94,8 +94,8 @@ SQL-First + AI = maximum velocity with zero surprises.
 
 ---
 
-**Sounds interesting?**
-
 - Learn pGenie in Y minutes: [pgenie.io/docs/tutorials/learn-pgenie-in-y-minutes](https://pgenie.io/docs/tutorials/learn-pgenie-in-y-minutes?utm_source=blog&utm_campaign=series-part1)  
+
 - Ask questions and share ideas: [github.com/pgenie-io/pgenie/discussions](https://github.com/pgenie-io/pgenie/discussions)
-- Give it a ⭐ on GitHub: [github.com/pgenie-io/pgenie](https://github.com/pgenie-io/pgenie)
+
+- Give it a star on GitHub: [github.com/pgenie-io/pgenie](https://github.com/pgenie-io/pgenie)
