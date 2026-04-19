@@ -45,7 +45,7 @@ Reusing row types across queries creates hidden dependencies and plants future f
 
 That perspective made a solid foundation, but something was still missing.
 
-The user had to accompany every query with hand-rolled codecs and the SQL string was lacking any validation. So in 2019 I shipped **hasql-th** - a compile-time SQL syntax checking library based on a port of the PostgreSQL parser. It made things simpler and safer, but still not enough. We needed the queries validated against the actual schema.
+The user had to accompany every query with hand-rolled codecs and the SQL string was lacking any validation. So in 2019 I shipped **hasql-th** - a compile-time SQL syntax checking library based on a port of the PostgreSQL parser executed via macros. It made things simpler and safer, but was still not enough. We needed the queries validated against the actual schema.
 
 I saw projects pop up over the years that tried to solve this problem by introducing a compile-time connection to the database. But that always felt like a hack that made builds unreproducible. I was looking for a solution that could be contained in code in a repository without infrastructure dependencies, and eventually it came in the form of the following insight.
 
@@ -62,7 +62,7 @@ Your application is just a client of that API. The database is primary. The appl
 
 **This is the essence of the DB-First (or SQL-First) approach.**
 
-Suddenly everything clicked. The schema lives in SQL migrations. The queries live in `.sql` files. All of that gets checked into a repository and becomes a subject to development, testing and review. Everything else - types, encoders, decoders, index recommendations - can be automatically derived and safely integrated into codebases with the help of type-checking compilers.
+Suddenly everything clicked. The schema lives in SQL migrations. The queries live in `.sql` files. All of that gets checked into a repository and becomes a subject to development, testing and review. Everything else - types, codecs, index recommendations - can be automatically derived and safely integrated into codebases with the help of type-checking compilers. And do you see it? It's no longer coupled to any particular programming language!
 
 ### 2022–2026: From Closed SaaS Experiment to Open Source
 
@@ -77,7 +77,7 @@ It's a simple CLI. You point it at your `migrations/` and `queries/` folders. It
 ### What pGenie Actually Gives You
 
 - Zero boilerplate type-safe SDKs
-- Fidelity to advanced Postgres features (JSONB, arrays, composites, multiranges, extensions, etc.) and queries of any complexity
+- Support for advanced Postgres features (JSONB, arrays, composites, multiranges, extensions, etc.) and queries of any complexity
 - Decentralized code generators written in safe, reproducible Dhall
 - Signature files that catch schema drift at build time
 - Automatic index recommendations and sequential-scan warnings  
@@ -86,13 +86,15 @@ The full side-by-side of source SQL and the generated client code for Haskell, R
 
 ### How this fits in the AI Era
 
-LLMs are great at writing SQL. They are not that great at ensuring it still works after your next migration.
+LLMs are great at writing SQL. They are not that great at ensuring it still works after your next migration. Why? Because they are inherently probabilistic and that won't change.
 
-pGenie closes that gap: AI writes the query, pGenie deterministically verifies it against the real schema, you get a predictably structured type-safe SDK in seconds.
+pGenie and tools like it fill that gap: AI writes the query, pGenie deterministically verifies it against the real schema, you get a predictably structured type-safe SDK.
 
-SQL-First + AI = maximum velocity with zero surprises.
+**SQL-First + AI = higher velocity with fewer surprises.**
 
 ---
+
+### What next?
 
 - Learn pGenie in Y minutes: [pgenie.io/docs/tutorials/learn-pgenie-in-y-minutes](https://pgenie.io/docs/tutorials/learn-pgenie-in-y-minutes?utm_source=blog&utm_campaign=series-part1)  
 
