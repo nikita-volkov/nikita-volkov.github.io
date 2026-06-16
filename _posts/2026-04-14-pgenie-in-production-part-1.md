@@ -25,15 +25,25 @@ Then reality hit.
 
 In 2014 I stopped development. In 2016 I killed support. Lesson learned: **abstracting over SQL is usually a mistake**.
 
-### Insight #1: Instead of replacing SQL - we should make integration with it better
+### Insight #1: Instead of Replacing SQL - We Should Make Integration with It Better
 
 Instead of building another layer on top, I decided to make the integration with raw SQL as safe and convenient as possible.
 
 That led to **hasql** in 2014 - a driver that embraced raw SQL and gave composable abstractions supporting it. It's one of the two main Postgres drivers in the Haskell ecosystem today and the most efficient one.
 
-With this library I found the perfect integration point.
+### Insight #2: Supporting Every Database Means Serving None Well
 
-### Insight #2: The Query is the Optimal Integration Point
+SORM taught me another lesson. It targeted multiple databases, and each one came with its own quirks multiplying the implementation and maintenance effort and constraining the design.
+
+Starting with "hasql" I isolated the databases behind an adapter, intending to keep the quirks cleanly separated and I started with Postgres. Time has past and Postgres was still the only adapter. The rest was ambition, not investment. So I stopped pretending and committed to Postgres alone.
+
+The narrowing released me to invest deeply in the Postgres-specific features and optimizations, bringing support for its specific types (JSONB, arrays, composites, ranges) and eventually its pipelining mode of execution.
+
+That exposed the deeper cost. Supporting many databases isn't just a maintenance multiplier - it caps your design at their lowest common denominator. Your feature set shrinks to the intersection of what all of them support, so every integration inherits the weakest parts of each. **The wider you spread your support, the poorer the integration you can offer.**
+
+With this foundation I then found that...
+
+### Insight #3: The Query is the Optimal Integration Point
 
 Not the business logic model. Not the table row structure. **The query itself.**
 
@@ -49,7 +59,7 @@ The user had to accompany every query with hand-rolled codecs and the SQL string
 
 I saw projects pop up over the years that tried to solve this problem by introducing a compile-time connection to the database. But that always felt like a hack that made builds unreproducible. I was looking for a solution that could be contained in code in a repository without infrastructure dependencies, and eventually it came in the form of the following insight.
 
-### Insight #3: Migrations + Queries = Database API
+### Insight #4: Migrations + Queries = Database API
 
 Here's the mental model that changed everything for me:
 
