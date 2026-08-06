@@ -1,8 +1,42 @@
-_site
+# We apply the Gitignore Whitelist approach here.
+# Everything but a specific list of files and directories listed here gets ignored.
+# 
+# More on the approach: https://jasonstitt.com/gitignore-whitelisting-patterns.
+
+# Ignore everything in the root folder:
+/*
+
+# Unignore a specific list of files in the root folder:
+!/.gitignore
+!/LICENSE
+!/README.md
+!/CHANGELOG.md
+!/_config.yml
+!/_octopress.yml
+!/404.md
+!/favicon.ico
+!/favicon.png
+!/feed.xml
+!/Gemfile
+!/Gemfile.lock
+!/Gruntfile.js
+!/index.md
+!/package.json
+
+# Unignore subtrees:
+!/.github/
+!/_data/
+!/_includes/
+!/_layouts/
+!/_posts/
+!/_sass/
+!/_templates/
+!/about/
+!/assets/
+!/images/
+!/posts/
+!/theme-setup/
+!/notes/
+
+# Ignore noise:
 .DS_Store
-*.sublime-project
-*.sublime-workspace
-codekit-config.json
-node_modules
-_asset_bundler_cache
-.sass-cache
