@@ -3,7 +3,7 @@ layout: post
 title: "Tutorial: Profiling Cabal projects"
 tags: [haskell, cabal, profiling, tutorial]
 description: A tutorial on how to set up Cabal projects for profiling
-comments: true
+comments: false
 ---
 
 Profiling in Haskell can be an overwhelmingly confusing task. There's plenty of little things you need to set up right to be able to perform it. This post aims to organize this information.

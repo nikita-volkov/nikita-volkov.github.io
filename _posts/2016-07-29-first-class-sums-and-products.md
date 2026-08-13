@@ -2,7 +2,7 @@
 layout: post
 title: "First-class sums and products"
 tags: [haskell, thunk, lazy, strict, library]
-comments: true
+comments: false
 
 ---
 

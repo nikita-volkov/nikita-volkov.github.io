@@ -3,7 +3,7 @@ layout: post
 title: Announcing the "stm-containers" library
 tags: [haskell, stm, containers, hash table, hamt, map, set, benchmarks, performance]
 description: An introduction to the library and analysis of benchmarks
-comments: true
+comments: false
 
 ---
 

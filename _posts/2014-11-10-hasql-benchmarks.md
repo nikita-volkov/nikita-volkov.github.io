@@ -3,7 +3,7 @@ layout: post
 title: Hasql benchmarks
 tags: [haskell, postgresql, postgres, database, sql, benchmarks, performance, hasql]
 description: 
-comments: true
+comments: false
 
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: Haskell's modules system has problems with composition
 tags: [haskell, modules]
 description: 
-comments: true
+comments: false
 
 ---
 

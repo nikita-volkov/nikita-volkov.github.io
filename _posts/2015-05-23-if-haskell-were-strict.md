@@ -2,7 +2,7 @@
 layout: post
 title: "If Haskell were strict, what would the laziness be like?"
 tags: [haskell, thunk, lazy, strict, library]
-comments: true
+comments: false
 
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: "A taste of State: parsers are easy"
 tags: [haskell, state, parser, parsing, monad, transformer, postgres, postgresql, binary, format, c, decoder]
 description: A story of how I translated a C decoder to Haskell
-comments: true
+comments: false
 
 ---
 

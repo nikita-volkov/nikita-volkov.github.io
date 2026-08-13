@@ -2,7 +2,7 @@
 layout: post
 title: "Internal convention is a mistake"
 tags: [haskell, internals, modules, decomposition]
-comments: true
+comments: false
 
 ---
 
